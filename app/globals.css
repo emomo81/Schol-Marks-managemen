@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Mark entry grid ===== */
+.entry-scroll { overflow: auto; max-height: 62vh; }
+.entry-grid { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+.entry-grid th, .entry-grid td {
+  border-right: 1px solid #e6ddd2; border-bottom: 1px solid #e6ddd2; padding: 0; height: 34px;
+}
+.entry-grid th {
+  background: #fbf7f2; color: #8a7d76; font-weight: 500; font-size: 11.5px;
+  text-transform: uppercase; letter-spacing: .06em; padding: 6px 10px; text-align: center;
+  position: sticky; top: 0; z-index: 2; border-bottom: 1.5px solid #d9cec3;
+}
+.entry-grid th.l, .entry-grid td.l { text-align: left; padding-left: 14px; }
+.entry-grid th.student { position: sticky; left: 0; z-index: 4; background: #fbf7f2; min-width: 200px; border-right: 1.5px solid #d9cec3; }
+.entry-grid td.student { position: sticky; left: 0; z-index: 1; background: #fbf7f2; min-width: 200px; border-right: 1.5px solid #d9cec3; padding: 0 14px; font-weight: 500; }
+.entry-grid td.student .adm { font-family: var(--font-mono); font-size: 10.5px; color: #8a7d76; margin-top: 1px; }
+.entry-grid td.calc { background: #efe7dd; font-family: var(--font-mono); text-align: center; color: #4a3f3a; font-weight: 600; }
+.entry-grid td.calc.yr { background: #e6dccf; color: #1d1715; }
+.cell-input {
+  width: 100%; height: 34px; border: none; background: transparent; text-align: center;
+  font-family: var(--font-mono); font-size: 13px; outline: none; color: #1d1715;
+}
+.cell-input:focus { box-shadow: inset 0 0 0 2px #7a1d2e; background: #fff8f8; }
+.cell-input.locked { background: #efe7dd; color: #8a7d76; cursor: not-allowed; }
+.cell-input.low { color: #b3322c; }
+.entry-grid th.semhead { background: #efe2d2; color: #5a3a1c; }
+.entry-grid th.examhead { background: #e6dccf; color: #3a2a1c; }
+.entry-grid th.semavghead { background: #e0d3c2; color: #3a2a1c; font-weight: 600; }
+
+/* ===== Report card (rose paper) ===== */
+.rc-paper {
+  background: #f1c9cf; color: #2a1a1d;
+  border: 1px solid #d9a8af; border-radius: 6px; padding: 30px;
+  box-shadow: 0 14px 38px rgba(80,18,28,.18), 0 2px 6px rgba(80,18,28,.08);
+  font-family: var(--font-serif); font-size: 14px;
+}
+.rc-spread { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.rc-panel { border: 2px solid #2a1a1d; padding: 18px; }
+.rc-marks-paper {
+  background: #f1c9cf; border: 1px solid #d9a8af; border-radius: 6px; padding: 24px;
+  box-shadow: 0 14px 38px rgba(80,18,28,.18), 0 2px 6px rgba(80,18,28,.08);
+}
+.rc-marks-tbl { width: 100%; border-collapse: collapse; font-family: var(--font-sans); font-size: 11.5px; }
+.rc-marks-tbl th, .rc-marks-tbl td { border: 1.5px solid #2a1a1d; padding: 4px 6px; text-align: center; }
+.rc-marks-tbl th { font-weight: 700; font-size: 11px; }
+.rc-marks-tbl th.sem { background: rgba(255,255,255,.2); text-transform: uppercase; letter-spacing: .04em; }
+.rc-marks-tbl td.subj { text-align: left; font-weight: 700; text-transform: uppercase; font-size: 11px; padding-left: 8px; background: rgba(255,255,255,.06); }
+.rc-marks-tbl td.num { font-family: var(--font-mono); font-size: 12px; }
+.rc-marks-tbl td.avg { background: rgba(255,255,255,.18); font-weight: 700; }
+.rc-marks-tbl td.yr-avg { background: rgba(80,18,28,.12); font-weight: 700; color: #2a1a1d; }
+.rc-marks-tbl tr.tot td { font-weight: 700; background: rgba(255,255,255,.15); }
+
+/* ===== Prom option (report card) ===== */
+.rc-prom-option {
+  display: flex; align-items: baseline; gap: 8px; margin-top: 14px;
+  font-family: var(--font-sans); font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .03em; cursor: pointer;
+}
+.rc-prom-option .v {
+  flex: 1; border-bottom: 1.5px solid #2a1a1d; padding: 2px 6px;
+  font-family: var(--font-serif); font-weight: 600; text-transform: none;
+  letter-spacing: 0; font-size: 14.5px; color: #2a1a1d;
+}
+.rc-prom-option.active .v { background: rgba(255,255,255,.35); font-weight: 700; }
+.rc-prom-option .radio {
+  width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #2a1a1d;
+  display: inline-block; flex: 0 0 10px;
+}
+.rc-prom-option.active .radio { background: #2a1a1d; }
+
+/* ===== Signature (cursive) ===== */
+.rc-sig { font-family: cursive; font-size: 18px; color: #2a1a3a; line-height: 1; }
+.rc-sig.empty { color: #8a6671; }
+
+/* ===== Audit timeline ===== */
+.audit { display: flex; flex-direction: column; gap: 0; }
+.audit .ev { display: grid; grid-template-columns: 120px 12px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid #e6ddd2; font-size: 12.5px; align-items: flex-start; }
+.audit .ev .t { font-family: var(--font-mono); font-size: 11.5px; color: #8a7d76; }
+.audit .ev .dot { width: 8px; height: 8px; border-radius: 50%; background: #7a1d2e; margin-top: 5px; justify-self: center; }
+
+/* ===== Role picker (user form) ===== */
+.role-pick { padding: 10px; border: 1px solid #d9cec3; border-radius: 6px; cursor: pointer; background: #f7f2ec; text-align: left; }
+.role-pick:hover { border-color: #7a1d2e; }
+.role-pick.on { border-color: #7a1d2e; background: #f3e0e3; }
+
+/* ===== Bar charts ===== */
+.bars { display: flex; flex-direction: column; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 120px 1fr 60px; gap: 12px; align-items: center; font-size: 12.5px; }
+.bar-row .track { height: 10px; background: #efe7dd; border-radius: 6px; overflow: hidden; border: 1px solid #e6ddd2; }
+.bar-row .fill { height: 100%; background: linear-gradient(90deg, #7a1d2e 0%, #9a2a3d 100%); }
+
+/* ===== Print ===== */
+@media print {
+  .no-print { display: none !important; }
+  .rc-paper, .rc-marks-paper { box-shadow: none; page-break-inside: avoid; page-break-after: always; }
+}

@@ -1,1 +1,1 @@
-# Schol-Marks-managemen
+# Schol-Marks-management
